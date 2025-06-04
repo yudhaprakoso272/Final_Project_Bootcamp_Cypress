@@ -1,0 +1,29 @@
+{
+    "oneWay": {
+        "flyingFrom": "Jakarta",
+        "nameAirports": "Soekarno-Hatta",
+        "flyingTo": "Singapore",
+        "nameAirports2": "Singapore Changi Airport",
+        "dateDeparture": "30",
+        "passenger": "1 Passenger",
+        "airlanesName": "Malaysia Airlines",
+        "firstname": "budi",
+        "lastname": "santoso",
+        "email": "budi123@gmail.com",
+        "country": "Indonesia",
+        "countryCode": "Indonesia",
+        "phoneNumber": "85234786195",
+        "gender": "Male",
+        "firstMiddleName": "budi",
+        "lastName": "santoso",
+        "dateDay": "25",
+        "dateMonth": "May",
+        "dateYear": "2000",
+        "nationality": "Indonesia",
+        "passportNumber": "A12345678",
+        "region": "Indonesia",
+        "passportDay": "26",
+        "passportMonth": "May",
+        "passportYear": "2027"
+    }
+}
