@@ -4,5 +4,7 @@
     "buttonFilter": "#a-autoid-0-announce",
     "sortType": ".a-popover-wrapper",
     "sortBy": "#s-result-sort-select_2",
-    "showButton": "[class='a-size-small']"
+    "showButton": "[class='a-size-small']",
+    "product": "[role='listitem']",
+    "selectProduct": "[data-index='6']"
 }
