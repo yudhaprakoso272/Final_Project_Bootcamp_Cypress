@@ -1,0 +1,33 @@
+{
+  "name": "final_project_bootcamp_cypress",
+  "version": "1.0.0",
+  "description": "Aliffrianto Yudha Prakoso",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:run": "cypress run",
+    "report:merge": "mochawesome-merge cypress/reports/html/*.json --reportFilename merged-report.json",
+    "report:generate": "marge merged-report.json --reportDir cypress/reports/html",
+    "test:html": "npm run test:run && npm run report:merge && npm run report:generate",
+    "copy:report": "mkdir -p public && cp cypress/reports/html/merged-report.html public/index.html",
+    "deploy:report": "gh-pages -d public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yudhaprakoso272/Final_Project_Bootcamp_Cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yudhaprakoso272/Final_Project_Bootcamp_Cypress/issues"
+  },
+  "homepage": "https://github.com/yudhaprakoso272/Final_Project_Bootcamp_Cypress#readme",
+  "devDependencies": {
+    "cypress": "^14.4.1",
+    "gh-pages": "^6.3.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}

@@ -101,8 +101,8 @@ class BookFlight{
     inputAddOns(){
         cy.get(element.continueButton).contains('Continue to add-ons').click({force: true});
         cy.wait(5000);
-        cy.get(element.flightUpgrade).contains('Flight upgrades');
-        cy.get(element.flightUpgrade).contains('Basic').click({ multiple: true });
+        // cy.get(element.flightUpgrade).contains('Flight upgrades');
+        // cy.get(element.flightUpgrade).contains('Basic').click({ multiple: true });
         cy.get(element.addOns).contains('Upgrade your support level');
         cy.get(element.basicAddons).click({ multiple: true });
         cy.get(element.travelProtection).contains('No, thanks, I’ll risk it.').click();

@@ -12,7 +12,7 @@ describe('Agoda Flight Booking E2E', () => {
     agodaPage.selectPassenger(bookData.oneWay);
     cy.wait(2000);
     agodaPage.selectAirlanes(bookData.oneWay);
-    cy.wait(10000)
+    cy.wait(10000);
     agodaPage.inputContact1(bookData.oneWay);
     agodaPage.inputContact2(bookData.oneWay);
     agodaPage.inputPassport(bookData.oneWay);
