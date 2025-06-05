@@ -1,0 +1,8 @@
+{
+    "menuTrending": "[role='link']",
+    "tabTrending": "[id='tabsContainer']",
+    "selectVideo": "ytd-video-renderer",
+    "videoTitle": "[id='video-title']",
+    "videoChannel": "[id='channel-name']",
+    "validateTitle": "yt-formatted-string"
+}
