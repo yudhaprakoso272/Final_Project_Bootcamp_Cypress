@@ -1,5 +1,5 @@
 {
-    "inputSearch": "[id='twotabsearchtextbox']",
+    "inputSearch": "[role='searchbox']",
     "buttonSearch": "[id='nav-search-submit-button']",
     "buttonFilter": "#a-autoid-0-announce",
     "sortType": ".a-popover-wrapper",

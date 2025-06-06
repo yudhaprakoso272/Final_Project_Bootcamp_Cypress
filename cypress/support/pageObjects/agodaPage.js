@@ -43,7 +43,7 @@ class BookFlight{
         cy.get(element.airlanesName).contains(airlanesName).click();
         cy.wait(2000);
         cy.get(element.sortBy).click();
-        cy.wait(1000);
+        // cy.wait(1000);
         cy.get(element.listSortBy).click();
         cy.wait(2000);
         cy.get(element.typeAirlanes).first().click();
@@ -166,7 +166,7 @@ class BookFlight{
         cy.get(element.buttonDetail).click();
 
         // validasi departure time di halaman payment
-        cy.get(element.validateDeparture).invoke('text').then((detailDeparture) => {
+        cy.get(element.validateDeparture).first().invoke('text').then((detailDeparture) => {
             // log departure time yang disimpan
             const savedDeparture = Cypress.env('selectedDeparture');
             cy.log('Saved Departure Time:', savedDeparture);
@@ -176,7 +176,7 @@ class BookFlight{
         });
 
         // validasi arrival time di halaman payment
-        cy.get(element.validateArrival).invoke('text').then((detailArrival) => {
+        cy.get(element.validateArrival).last().invoke('text').then((detailArrival) => {
             // log departure time yang disimpan
             const savedArrival = Cypress.env('selectedArrival');
             cy.log('Saved Arrival Time:', savedArrival);

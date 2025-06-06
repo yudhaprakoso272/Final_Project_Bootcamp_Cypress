@@ -33,7 +33,7 @@ class AmazonPage {
     // Ambil nama dan harga produk ke-5 dari hasil pencarian
     cy.get(element.product).eq(4).within(() => {
       // Simpan nama produk
-      cy.get('h2').invoke('text').as('selectedTitle');
+      cy.get('h2 > span').invoke('text').as('selectedTitle');
 
       // Simpan harga produk (whole dollar)
       cy.get('.a-price-whole').first().invoke('text').then((price) => {
@@ -45,7 +45,7 @@ class AmazonPage {
     });
 
     // Validasi nama di halaman detail
-    cy.get('#title', { timeout: 10000 }).invoke('text').then((detailTitle) => {
+    cy.get('#title > #productTitle', { timeout: 10000 }).invoke('text').then((detailTitle) => {
       cy.get('@selectedTitle').then((expectedTitle) => {
         // Log nama produk yang disimpan
         cy.log('Saved product title:', expectedTitle);

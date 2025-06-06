@@ -6,11 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:run": "cypress run",
-    "report:merge": "mochawesome-merge cypress/reports/html/*.json --reportFilename merged-report.json",
+    "report:merge": "mochawesome-merge cypress/reports/html/*.json > merged-report.json",
     "report:generate": "marge merged-report.json --reportDir cypress/reports/html",
-    "test:html": "npm run test:run && npm run report:merge && npm run report:generate",
+    "test:html:video": "npm run test:run && npm run report:merge && npm run report:generate",
     "copy:report": "mkdir -p public && cp cypress/reports/html/merged-report.html public/index.html",
-    "deploy:report": "gh-pages -d public"
+    "deploy:report": "gh-pages -d public",
+    "test:run:novideo": "cypress run --video false",
+    "open:report": "npx open-cli cypress/artifacts/html/merged-report.html",
+    "copy:artifacts": "mkdir -p cypress/artifacts && cp -r cypress/videos cypress/artifacts/ && cp -r cypress/reports/html cypress/artifacts/"
   },
   "repository": {
     "type": "git",
