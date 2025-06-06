@@ -1,0 +1,42 @@
+name: Cypress Tests and Deploy Report
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests with video
+        run: npm run test:run
+
+      - name: Generate HTML report
+        run: |
+          npm run report:merge
+          npm run report:generate
+
+      - name: Copy report and videos to public/
+        run: |
+          mkdir -p public/videos
+          cp -r cypress/videos/* public/videos/ || echo "No videos to copy"
+          cp cypress/reports/html/merged-report.html public/index.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
